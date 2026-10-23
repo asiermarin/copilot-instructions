@@ -1,0 +1,41 @@
+{
+    "stryker-config": {
+        "concurrency": 4,
+        "mutation-level": "Standard",
+        "language-version": "latest",
+        "additional-timeout": 5000,
+        "mutate": [
+            "**/*"
+        ],
+        "solution": "<Root>.sln",
+        "test-projects": [
+            "<Root>.UnitTests/<Root>.UnitTests.csproj"
+        ],
+        "target-framework": "net10.0",
+        "coverage-analysis": "perTest",
+        "thresholds": {
+            "high": 80,
+            "low": 60,
+            "break": 0
+        },
+        "verbosity": "info",
+        "reporters": [
+            "Progress",
+            "Html"
+        ],
+        "since": {
+            "enabled": false,
+            "target": "main"
+        },
+        "ignore-methods": [
+            "LogTrace",
+            "LogDebug",
+            "LogInformation",
+            "LogWarning",
+            "LogError",
+            "LogCritical"
+        ],
+        "report-file-name": "mutation-report",
+        "break-on-initial-test-failure": false
+    }
+}
